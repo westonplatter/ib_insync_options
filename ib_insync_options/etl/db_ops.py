@@ -12,6 +12,7 @@ def gen_engine():
 
     Returns:
         sqlalchemy.engine.Engine: engine
+
     """
     db_name = os.environ.get("IB_INSYNC_OPTION_DB_NAME", "ib_insync_options_dev")
     db_user = os.environ.get("IB_INSYNC_OPTION_DB_USER", "postgres")
@@ -26,7 +27,7 @@ def gen_engine():
 
 def upsert_df(engine: sqlalchemy.engine.Engine, df: pd.DataFrame, table_name: str):
     """
-    Credit goes @pedrovgp for https://stackoverflow.com/a/69617559/665578
+    Credit goes @pedrovgp for https://stackoverflow.com/a/69617559/665578.
 
     Implements the equivalent of pd.DataFrame.to_sql(..., if_exists='update')
     (which does not exist). Creates or updates the db records based on the

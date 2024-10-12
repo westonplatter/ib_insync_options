@@ -3,7 +3,6 @@ import datetime
 
 import pandera as pa
 import pytest
-import pytz
 from ib_insync import FuturesOption, OptionComputation, Ticker
 
 from ib_insync_options.etl.facets import CoreFacetSchema
@@ -11,7 +10,6 @@ from ib_insync_options.etl.ibkr_etl import (  # IbkrDownloaderCrude,; IbkrDownlo
     IbkrDownloader,
     map_month_code_to_number,
 )
-from ib_insync_options.utils.date_utils import calc_effective_date_of_dt
 
 
 def gen_test_tickers():

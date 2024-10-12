@@ -47,6 +47,7 @@ class InstrumentMultiplexer:
 
         Returns:
             pd.DataFrame: finx FacetCoreDf df
+
         """
         parts = instrument_input.split(":")
 
@@ -81,6 +82,7 @@ class InstrumentMultiplexer:
 
         Returns:
             dict: key/value dict of cache files. Key is date_str, value is full path.
+
         """
         logger.debug(f"get_instrument_files: {instrument_input}")
 
@@ -123,6 +125,7 @@ class InstrumentMultiplexer:
 
         Returns:
             bool: True if cache exists for the given asset_class, ticker, and effective_date
+
         """
         edt_str = effective_date.strftime("%Y-%m-%d")
         sql = """
@@ -160,6 +163,7 @@ class InstrumentMultiplexer:
 
         Returns:
             pd.DataFrame: Finx FacetCoreDf df
+
         """
         edt_str = effective_date.strftime("%Y-%m-%d")
 
@@ -237,7 +241,7 @@ class InstrumentMultiplexer:
     @classmethod
     def _ibkr_cache_list(cls, engine, asset_class: str, ticker: str):
         """
-        Returns key/value dict of available data. Key is date_str, value is "edt" value
+        Returns key/value dict of available data. Key is date_str, value is "edt" value.
 
         Args:
             engine (sqlalchemy.engine.Engine): db engine
@@ -246,6 +250,7 @@ class InstrumentMultiplexer:
 
         Returns:
             dict: key/value dict of available data. Key is date_str, value is "edt" value
+
         """
         sql = """
             SELECT DISTINCT DATE(edt) AS edt 

@@ -69,6 +69,7 @@ def map_ticker_to_exchange(product: str) -> str:
 
     Returns:
         str: exchange
+
     """
     # equities
     if product in [
@@ -122,7 +123,7 @@ def map_ticker_to_exchange(product: str) -> str:
 
 def gen_contract_future(parts: List[str], currency: str = "USD") -> Contract:
     """
-    Example: parts= ["future", "CLK21"]
+    Example: parts= ["future", "CLK21"].
     """
 
     offset = 0
@@ -172,6 +173,7 @@ class IbkrEtl:
 
         Returns:
             Contract: IB contract object
+
         """
         parts = full_ticker.split(":")
         contract_type = cls.lookup_contract_type(parts[0].lower())
@@ -206,6 +208,7 @@ class IbkrEtl:
 
         Returns:
             tuple[float, datetime]: last price and datetime in UTC
+
         """
         ib.reqMarketDataType(market_data_type.value)
         [ticker] = ib.reqTickers(contract)
@@ -222,6 +225,7 @@ class IbkrEtl:
 
         Returns:
             pd.DataFrame: df with columns: 	[exchange, underlyingConId, tradingClass, multiplier, expirations, strikes]
+
         """
         exchange = map_ticker_to_exchange(product_symbol)
         index = Index(product_symbol, exchange, "USD")
@@ -244,7 +248,7 @@ class IbkrEtl:
         cls, ib: IB, contract_future: Future
     ) -> pd.DataFrame:
         """
-        TODO(next)
+        TODO(next).
 
         Args:
             ib (IB): ib_insync IB object
@@ -252,6 +256,7 @@ class IbkrEtl:
 
         Returns:
             pd.DataFrame: df with columns: 	[exchange, underlyingConId, tradingClass, multiplier, expirations, strikes]
+
         """
         # product_symbol = contract_future.symbol
         # exchange = map_ticker_to_exchange(product_symbol)
@@ -289,6 +294,7 @@ class IbkrEtl:
 
         Returns:
             pd.DataFrame: df with columns: 	[exchange, underlyingConId, tradingClass, multiplier, expirations, strikes]
+
         """
         df = df.explode("expirations")
         df = df.explode("strikes")
@@ -329,6 +335,7 @@ class IbkrEtl:
 
         Returns:
             List[FuturesOption]: list of FuturesOption objects
+
         """
         options = []
         for _, row in df.iterrows():
@@ -389,14 +396,15 @@ class IbkrEtl:
 
         Returns:
             List[Option]: list of Option objects
+
         """
         options = []
         for _, row in df.iterrows():
             trade_date = row["expiry"].strftime("%Y%m%d")
             symbol = row["product_symbol"]
             strike = float(row["strike"])
-            exchange = row["exchange"]
-            multiplier = row["multiplier"]
+            row["exchange"]
+            row["multiplier"]
 
             call = Option(
                 symbol=symbol,
@@ -445,6 +453,7 @@ class IbkrEtl:
 
         Returns:
             List[Any]: list of ib_insync Ticker objects
+
         """
         all_tickers = []
         ib.reqMarketDataType(market_data_type.value)
@@ -471,6 +480,7 @@ class IbkrEtl:
 
         Returns:
             pd.DataFrame: df
+
         """
         # observation date for tickers if none is provided
         utc_now = datetime.now(pytz.utc)
@@ -514,7 +524,7 @@ class IbkrEtl:
                 row[FacetCoreDfColumns.DTE.value] = (
                     expiry_dt.date() - observed_dt.date()
                 ).days
-            except Exception as e:
+            except Exception:
                 row[FacetCoreDfColumns.DTE.value] = None
 
             # row[FacetCoreDfColumns.RIGHT.value] = ticker.contract.right

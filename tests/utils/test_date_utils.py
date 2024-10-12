@@ -1,5 +1,4 @@
 import pandas as pd
-from dateutil.relativedelta import relativedelta
 
 from ib_insync_options.utils.date_utils import (
     gen_cme_crude_contract,

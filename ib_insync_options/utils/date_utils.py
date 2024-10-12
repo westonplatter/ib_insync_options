@@ -9,7 +9,7 @@ from pandas.tseries.offsets import BDay
 def calc_effective_date_of_dt(
     dt: pd.Timestamp = None, market: str = None, instrument: str = None
 ):
-    """Calculate the data effective date for a given pd.Timestamp
+    """Calculate the data effective date for a given pd.Timestamp.
 
     Args:
         dt (pd.Timestamp, optional): [description]. Defaults to None.
@@ -18,6 +18,7 @@ def calc_effective_date_of_dt(
 
     Returns:
         pd.Timestamp: data effective date
+
     """
     if dt is None:
         dt = pd.Timestamp.today(tz="US/Mountain")
@@ -32,10 +33,11 @@ def calc_effective_date_of_dt(
 
 def gen_now_dt(time_zone_str: str = "US/Mountain") -> datetime:
     """
-    Generate dt for now in specified timezone
+    Generate dt for now in specified timezone.
 
     Returns:
         datetime.datetime: dt
+
     """
     utc_now = datetime.now(pytz.utc)
     mt_now = utc_now.astimezone(pytz.timezone(time_zone_str))
@@ -44,10 +46,11 @@ def gen_now_dt(time_zone_str: str = "US/Mountain") -> datetime:
 
 def gen_now_date_str(time_zone_str: str = "US/Mountain") -> str:
     """
-    Generate today's date string
+    Generate today's date string.
 
     Returns:
         str: today's date string
+
     """
     utc_now = datetime.now(pytz.utc)
     mt_now = utc_now.astimezone(pytz.timezone(time_zone_str))
@@ -85,6 +88,7 @@ def gen_cme_crude_contract(ed: pd.Timestamp, number: int = 1) -> date:
 
     Returns:
         datetime.date: termination date
+
     """
     # https://www.cmegroup.com/markets/energy/crude-oil/light-sweet-crude.contractSpecs.html
     # Trading terminates 3 business day before the 25th calendar day of the month

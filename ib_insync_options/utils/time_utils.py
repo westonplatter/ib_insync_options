@@ -1,18 +1,18 @@
 from datetime import datetime
 
 import pandas as pd
-import pytz
 
 
 def gen_et_dt_close(dt: datetime) -> datetime:
     """
-    gen et dt close
+    gen et dt close.
 
     Args:
         dt (datetime): _description_
 
     Returns:
         datetime: _description_
+
     """
     ts = pd.Timestamp(dt).tz_localize("US/Eastern")
     ts = ts.replace(hour=16)

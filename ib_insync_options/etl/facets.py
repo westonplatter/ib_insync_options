@@ -3,7 +3,6 @@ from typing import Any
 
 import pandas as pd
 import pandera as pa
-from loguru import logger
 from pandera.typing import Series
 
 

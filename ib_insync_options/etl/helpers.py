@@ -21,6 +21,7 @@ def filter_for_near_dated_within_bps(
 
     Returns:
         pd.DataFrame: subset of df that meets filter criteria
+
     """
     assert "expiry" in df.columns
     assert "strike" in df.columns
@@ -77,6 +78,7 @@ def filter_for_monthlies_within_bps(
 
     Returns:
         pd.DataFrame: subset of df that meets filter criteria
+
     """
     df = df.copy()
 
