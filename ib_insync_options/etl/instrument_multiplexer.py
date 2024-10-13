@@ -205,7 +205,19 @@ class InstrumentMultiplexer:
         ticker: str,
         effective_date: pd.Timestamp,
         df: pd.DataFrame,
-    ):
+    ) -> str:
+        """
+        Write a ib_insync_option df df to the ibkr cache.
+
+        Args:
+            asset_class (str): asset class
+            ticker (str): ticker
+            effective_date (pd.Timestamp): effective date
+            df (pd.DataFrame): ib_insync_option df
+
+        Returns:
+            str: short message of results
+        """
         df[ColumnNames.UPDATED_AT.value] = gen_now_dt(time_zone_str="US/Mountain")
         df[ColumnNames.ASSET_CLASS.value] = asset_class
 
