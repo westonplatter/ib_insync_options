@@ -6,7 +6,7 @@ Define, download, persist, and analyze options data for IBKR via `ib-insync`.
 
 See [example_downloads_for_es_gc_cl.ipynb](example_downloads_for_es_gc_cl.ipynb).
 
-# Local Development
+# # Local Development
 
 ```
 psql -U postgres
