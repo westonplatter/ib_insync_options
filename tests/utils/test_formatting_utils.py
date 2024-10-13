@@ -35,5 +35,6 @@ from ib_insync_options.utils.formatting_utils import (
     snake_case_columns,
 )
 
+
 def test_convert_to_snake_case():
     assert convert_to_snake_case("HelloWorld") == "hello_world"

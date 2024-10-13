@@ -33,6 +33,9 @@ lint:
       paths:
         - "*.ipynb"
 
+    - linters: [ALL]
+      paths: ["CHANGELOG.md"]
+
 runtimes:
   enabled:
     - go@1.21.0
