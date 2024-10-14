@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.0](https://github.com/westonplatter/ib_insync_options/compare/v0.0.1...v0.1.0) (2024-10-14)
+
+
+### Features
+
+* **etl:** move ibkr code into ibkr etl file ([f13aad3](https://github.com/westonplatter/ib_insync_options/commit/f13aad33a79ce949771cda0ba5af62e0db905222))
+* remove unused libs ([#9](https://github.com/westonplatter/ib_insync_options/issues/9)) ([34da9b9](https://github.com/westonplatter/ib_insync_options/commit/34da9b9a5841ec771c4646a4a650f5a861bff56f))
+
+
+### Bug Fixes
+
+* formatting in README.md ([#11](https://github.com/westonplatter/ib_insync_options/issues/11)) ([07a9eb4](https://github.com/westonplatter/ib_insync_options/commit/07a9eb48746b327e547553572f27948d11cd50ee))
+* remove deps and update lock ([#13](https://github.com/westonplatter/ib_insync_options/issues/13)) ([712146b](https://github.com/westonplatter/ib_insync_options/commit/712146b01b528273af5fb51557ff987aaa703ad0))
+
 ## 0.0.1 (2024-10-12)
 
 
