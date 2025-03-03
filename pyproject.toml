@@ -1,6 +1,6 @@
 [project]
 name = "ib_insync_options"
-version = "0.0.2"
+version = "0.1.0"
 description = ""
 authors = [{ name = "Weston Platter", email = "westonplatter@gmail.com" }]
 requires-python = "~=3.9"
