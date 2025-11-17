@@ -3,7 +3,7 @@ import datetime
 
 import pandera as pa
 import pytest
-from ib_insync import FuturesOption, OptionComputation, Ticker
+from ib_async import FuturesOption, OptionComputation, Ticker
 
 from ib_insync_options.etl.facets import CoreFacetSchema
 from ib_insync_options.etl.ibkr_etl import (  # IbkrDownloaderCrude,; IbkrDownloaderES,; IbkrDownloaderGold,; IbkrDownloaderNQ,; _helper_gen_dt,
