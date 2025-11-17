@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pandera as pa
 import pytz
-from ib_insync import (
+from ib_async import (
     IB,
     Contract,
     Future,
